@@ -4,7 +4,6 @@ import weatherApi from "../services/weatherApi";
 import type { CurrentWeatherResponse } from "../types/weather";
 import type { Units } from "../services/weatherApi";
 
-const defaultCity = "New Delhi";
 
 export function useWeather() {
   const weather = ref<CurrentWeatherResponse | null>(null);
@@ -65,7 +64,7 @@ export function useWeather() {
         await fetchByCoords(latitude, longitude);
         loading.value = false;
       },
-      (err) => {
+      (_) => {
         error.value = "Permission denied or unable to fetch location.";
         loading.value = false;
       }

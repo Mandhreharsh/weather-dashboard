@@ -21,7 +21,7 @@
         <!-- Weather Description -->
         <div class="ml-[80px]">
           <div class="text-[50px] text-[#f3f4f6]">
-            {{ weather.weather[0].description }}
+            {{ weather?.weather?.[0]?.description || "No description" }}
           </div>
         </div>
 
